@@ -45,4 +45,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Relacionamento: Um usuário pode ter muitas vendas
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function vendas()
+    {
+        return $this->hasMany(Venda::class);
+    }
 }
